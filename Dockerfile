@@ -6,7 +6,7 @@ WORKDIR /app
 COPY ./publish .
 
 # Expone el puerto que usa la API 
-EXPOSE 6000
+EXPOSE 4000
 
 # Comando de inicio
 ENTRYPOINT ["dotnet", "LOGIN.dll"]
