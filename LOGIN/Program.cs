@@ -18,7 +18,7 @@ Log.Logger = new LoggerConfiguration()
     .ReadFrom.Configuration(builder.Configuration)
     .CreateLogger();
 
-builder.Host.UseSerilog(); // Ingracion Serilog con la aplicación
+builder.Host.UseSerilog(); // Ingracion Serilog con la aplicaciÃ³n
 builder.WebHost.UseUrls("http://0.0.0.0:4000");
 
 try
@@ -53,7 +53,7 @@ try
 }
 catch (Exception ex)
 {
-    Log.Fatal(ex, "La aplicación se detuvo inesperadamente");
+    Log.Fatal(ex, "La aplicaciÃ³n se detuvo inesperadamente");
 }
 finally
 {
