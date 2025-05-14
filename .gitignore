@@ -1,0 +1,8 @@
+﻿################################################################################
+# Este archivo .gitignore ha sido creado automáticamente por Microsoft(R) Visual Studio.
+################################################################################
+
+/LOGIN/appsettings.Development.json
+/LOGIN/.env
+/LOGIN/firebase-config.json
+publish/firebase-config.json
