@@ -1,4 +1,4 @@
-﻿using LOGIN.Services.Interfaces;
+using LOGIN.Services.Interfaces;
 using LOGIN.Entities;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
@@ -59,13 +59,6 @@ namespace LOGIN
             services.Configure<DeviceNotificationRequest>(Configuration.GetSection("Firebase"));
             services.AddScoped<INotificationService, NotificationService>();
 
-            // Asegúrate que el archivo firebase-config.json esté en el directorio correcto
-            //var firebaseConfigPath = Path.Combine(Directory.GetCurrentDirectory(), "firebase-config.json");
-            //if (!File.Exists(firebaseConfigPath))
-            //{
-            //    throw new FileNotFoundException("Archivo de configuración de Firebase no encontrado");
-            //}
-
             // Add AutoMapper service
             services.AddAutoMapper(typeof(Startup));
 
@@ -124,17 +117,11 @@ namespace LOGIN
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-                          
             app.UseSwagger();
-            app.UseSwaggerUI();
-            //{
-            //    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My API V1");
-            //    c.RoutePrefix = string.Empty;
-            //});
-            //{
-            //    app.UseExceptionHandler("/error");
-            //    app.UseHsts();
-            //}
+            app.UseSwaggerUI(c => {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "API V1");
+                // No establecer RoutePrefix como vacío para mantener Swagger en /swagger
+            });
 
             app.UseHttpsRedirection();
             app.UseRouting();
