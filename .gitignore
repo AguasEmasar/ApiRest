@@ -6,3 +6,4 @@
 /LOGIN/.env
 /LOGIN/firebase-config.json
 publish/firebase-config.json
+.vs/
